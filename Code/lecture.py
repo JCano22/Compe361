@@ -1,9 +1,6 @@
-num = 2
+num = int(input('Please input a number: '))
 
-match num:
-    case 1:
-        print('1')
-    case 2:
-        print('yes, it is 2')
-    case 3: 
-        print('3')
+if num == 0:
+    num = int(input('Please input a non-zero number: '))
+
+print('positive' if (num > 0) else 'negative')
