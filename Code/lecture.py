@@ -1,6 +1,10 @@
-num = int(input('Please input a number: '))
+def fib(n):
+    if n == 1:
+        return 1
+    if n == 0:
+        return 0
+    return fib(n-1) + fib(n-2)
 
-if num == 0:
-    num = int(input('Please input a non-zero number: '))
-
-print('positive' if (num > 0) else 'negative')
+print("========")
+r = fib(11)
+print(r)
