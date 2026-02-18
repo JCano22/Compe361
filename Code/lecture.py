@@ -1,21 +1,17 @@
-import random
+h = 7
+b = h > 0 or 1 / h + h/(h-7) > 1   
+print(b) #prints True
 
-trials = 100000        
-students = 50         
-shared_count = 0      
+p = '123'
+q = '25'
+r = p + q
+print(r)
+#prints 12325
 
-for _ in range(trials):
-    birthdays = []
+n = int(input())
+sum = 0
+while(n != 0):
+    sum += (n % 10)
+    n //= 10
 
-    # generate birthdays
-    for _ in range(students):
-        day = random.randint(1, 365)
-        birthdays.append(day)
-
-    # check if there is at least one match
-    if len(birthdays) != len(set(birthdays)):
-        shared_count += 1
-
-# estimated probability
-probability = shared_count / trials
-print("Estimated probability:", probability)
+print(sum)
