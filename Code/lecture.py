@@ -1,17 +1,12 @@
-h = 7
-b = h > 0 or 1 / h + h/(h-7) > 1   
-print(b) #prints True
+import tkinter as tk
 
-p = '123'
-q = '25'
-r = p + q
-print(r)
-#prints 12325
+root = tk.Tk()
 
-n = int(input())
-sum = 0
-while(n != 0):
-    sum += (n % 10)
-    n //= 10
+# Create a top-level window                    
+top_level = tk.Toplevel(root)
+top_level.title("My TopLevel")         
 
-print(sum)
+# Add widgets to the top-level window
+label = tk.Label(top_level, text= "This is a top level window.")
+label.pack()            
+root.mainloop()
