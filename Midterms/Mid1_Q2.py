@@ -2,10 +2,10 @@
 
 def prod(a, b, c):
     p = 1
-    for num in (a,b,c):
-        if num not in (0, None):
-            p *= num
+    for n in (a,b,c):
+        if n not in (0, None):
+            p *= n
+    
     return p
 
-num = prod(2, 0, 4)
-print(num)
+print(prod(1,2,10))

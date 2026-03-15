@@ -21,22 +21,23 @@ while True:
     except ValueError:
         print("Please enter and integer.")
 
+n = input("what is your name: ")
 if grade >= 94:
-    print("A")
+    print(f"{n} got an A")
 elif grade >= 90:
-    print("A-")
+    print(f"{n} got an A-")
 elif grade >= 87:
-    print("B+")
+    print(f"{n} got a B+")
 elif grade >= 84:
-    print("B")
+    print(f"{n} got a B")
 elif grade >= 80:
-    print("B-")
+    print(f"{n} got a B-")
 elif grade >= 77:
-    print("C+")
+    print(f"{n} got a C+")
 elif grade >= 74:
-    print("C")
+    print(f"{n} got a C")
 elif grade >= 70:
-    print("C-")
+    print(f"{n} got a C-")
 else:
-    print("F")
+    print(f"{n} got an F")
 

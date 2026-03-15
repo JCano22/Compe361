@@ -12,10 +12,10 @@ class Vehicle(Movable, Engine):
     def __init__(self, speed, force):
         Movable.__init__(self, speed)
         Engine.__init__(self, force)
-    
+        
     def print(self):
-        print(f"Speed: {self.speed}")
-        print(f"Force: {self.force}")
+        print(self.speed)
+        print(self.force)
 
-v = Vehicle(40, 100)
+v = Vehicle(50, 100)
 v.print()
