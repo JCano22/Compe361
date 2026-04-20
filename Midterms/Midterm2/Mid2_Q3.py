@@ -2,27 +2,28 @@
 
 import wx
 
-def btn1Click(evt):
-    global memo
-    memo = txt.GetValue()
-    txt.SetValue("")
 
-def btn2Click(evt):
-    txt.SetValue(memo)
+def on_store(evt):
+    global stored_num
+    stored_num = t.GetValue()
+    t.SetValue("")
 
-theApp = wx.App()
-f = wx.Frame(parent = None, title = "Midterm-2 Q3", size = (300, 200))
+def on_display(evt):
+    t.SetValue(stored_num)
 
-txt = wx.TextCtrl(parent = f, size = (100, 25))
-txt.SetPosition(wx.Point(5, 10))
 
-btn1 = wx.Button(parent = f, size = (50, 25), label = "Hide")
-btn1.SetPosition(wx.Point(5, 50))
-btn1.Bind(wx.EVT_BUTTON, btn1Click)
+app = wx.App()
+f = wx.Frame(None, title="Midterm 2 Q3", size=(300, 200))
 
-btn2 = wx.Button(parent = f, size = (50, 25), label = "Show")
-btn2.SetPosition(wx.Point(55, 50))
-btn2.Bind(wx.EVT_BUTTON, btn2Click)
+b1 = wx.Button(f, label="Store Number", pos=(50, 100))
+b1.SetSize((100, 30))
+b1.Bind(wx.EVT_BUTTON, on_store)
+
+b2 = wx.Button(f, label="Display Number", pos=(150, 100))
+b2.SetSize((100, 30))
+b2.Bind(wx.EVT_BUTTON, on_display)
+
+t = wx.TextCtrl(f, pos=(50, 50), size=(200, 30), value=(""))
 
 f.Show()
-theApp.MainLoop()
+app.MainLoop()
