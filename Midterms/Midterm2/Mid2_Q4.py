@@ -2,12 +2,12 @@
 
 f = open("/Users/jorgecano/Desktop/test.txt", "r+b")
 
-u = f.read(1)
+b = f.read(1)
 
-while u != b'':
-    if u == b';':
+while b != b'':
+    if b == b',':
         f.seek(-1, 1)
-        f.write(b',')
-    u = f.read(1)
+        f.write(b'!')
+    b =f.read(1)
 
 f.close()
