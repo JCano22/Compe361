@@ -14,9 +14,10 @@ conn = sqlite3.connect("/Users/jorgecano/Desktop/Shop.db")
 c = conn.cursor()
 c.execute("SELECT * FROM Purchases")
 
-r = c.fetcone()
+r = c.fetchone()
 
 while r is not None:
-    print(r[1] + " " r[4] + " " + str(r[2] * r[3]))
+    print(r[1] + " " + r[4] + " " + str(r[2] * r[3]))
     r = c.fetchone()
 
+conn.close()

@@ -2,28 +2,26 @@
 
 import wx
 
-
 def on_store(evt):
-    global stored_num
-    stored_num = t.GetValue()
-    t.SetValue("")
+    global num
+    if txt.GetValue() != "":
+        num = txt.GetValue()
+        txt.SetValue("")
+    else:
+        on_display()
 
-def on_display(evt):
-    t.SetValue(stored_num)
+def on_display():
+    txt.SetValue(num)
 
 
 app = wx.App()
-f = wx.Frame(None, title="Midterm 2 Q3", size=(300, 200))
+f = wx.Frame(None, title="midterm", size = (300, 200))
 
-b1 = wx.Button(f, label="Store Number", pos=(50, 100))
-b1.SetSize((100, 30))
+txt = wx.TextCtrl(f, pos = (50, 50), size = (50, 20), value = "")
+
+b1 = wx.Button(f, label = "click", pos = (50, 100), size =(50,20))
 b1.Bind(wx.EVT_BUTTON, on_store)
 
-b2 = wx.Button(f, label="Display Number", pos=(150, 100))
-b2.SetSize((100, 30))
-b2.Bind(wx.EVT_BUTTON, on_display)
-
-t = wx.TextCtrl(f, pos=(50, 50), size=(200, 30), value=(""))
 
 f.Show()
 app.MainLoop()
