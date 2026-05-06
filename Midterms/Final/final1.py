@@ -14,14 +14,11 @@ def Echo(a,b,f):
         print(z)
         k+=1
 
-def g(r):
-    return r*r
+def g(x):
+    return x**2
 
-print("======= Echo function with g(r) = r^2 =======")
 x = 2
-y = 3
-z = 4
+y = 5
+Echo(x,y,g)
 
-Echo(x, y, g)
-
-Echo(x, z, lambda r: r * r) #lambda funcion is an anonymous function that can be defined in a single line. In this case, it takes an argument r and returns r squared.
+Echo(1,10, lambda x: x + 1)

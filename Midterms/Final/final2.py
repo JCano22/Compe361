@@ -7,9 +7,8 @@ class MyDate:
         self.year = year
     
     def __str__(self):
-        return f"{self.day:02d}/{self.month:02d}/{self.year}"
+        return (str(f"{self.month:02}/{self.day:02}/{self.year}"))
 
-# Example usage:
+today = MyDate(5,5,2026)
 
-date1 = MyDate(4, 5, 2026)
-print(date1)  # Output: 04/05/2026
+print(today)
