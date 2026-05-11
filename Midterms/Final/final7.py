@@ -3,15 +3,17 @@
 import socket
 
 srv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 srv.bind(('0.0.0.0', 5000))
 
 srv.listen(5)
 
 while True:
-    cnt, remote = srv.accept()
+    c, a = srv.accept()
+    txt = c.recv(1024).decode()
+    u = txt.upper()
+    c.send(u.encode())
+    
+srv.close()
 
-    txt = cnt.recv(1024).decode()
-    resp = txt.upper()
-    cnt.send(resp.encode())
 
-    cnt.close()

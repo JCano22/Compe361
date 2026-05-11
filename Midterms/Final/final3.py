@@ -4,8 +4,19 @@
 #then the following numbers should be printed:
 #9, 8, 7 (printed numbers to not need to be sorted)
 
+num = int(input("Enter number: "))
+a = []
 
+while num >= 0:
+    if len(a) < 3:
+        a.append(num)
+    else:
+        a.append(num)
+        a.sort()
+        a.pop(0)
+    num = int(input("Enter number: "))
+
+print(a)
 
 
         
-print(lst)

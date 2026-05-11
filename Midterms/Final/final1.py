@@ -14,11 +14,10 @@ def Echo(a,b,f):
         print(z)
         k+=1
 
-def g(x):
-    return x**2
+def g(p):
+    return pow(p, 3)
 
-x = 2
-y = 5
-Echo(x,y,g)
+a = 2
+b = 14
 
-Echo(1,10, lambda x: x + 1)
+Echo(a,b,g)

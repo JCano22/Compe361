@@ -2,15 +2,16 @@
 
 f = open("//Users//jorgecano//Desktop//untitled.txt", "r+b")
 
-n = f.read(2)
+a = f.read(2)
 
-while n != b'':
-    if n == b"!\0":
+while a != b'':
+    if a == b"!\0":
         f.seek(-2, 1)
-        f.write(b"#\0")
-    elif n == b"#\0":
+        f.write(b'#\0')
+    elif a == b'#\0':
         f.seek(-2, 1)
-        f.write(b"!\0")
-    n = f.read(2)
+        f.write(b'!\0')
+    a=f.read(2)
 
 f.close()
+    

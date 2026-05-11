@@ -13,7 +13,7 @@ r = cmd1.fetchone()
 while r != None:
     cmd2.execute("SELECT * FROM Students WHERE StudentID = ?", (r[1],))
     stud = cmd2.fetchone()
-    print(str(r[0]) + ", " + stud[1] + ", " + r[2] + ", " + str(r[3]))
+    print(f"{r[0]}, {stud[1]}, {r[2]}, {r[3]}")
     r = cmd1.fetchone()
 
 con.close()
